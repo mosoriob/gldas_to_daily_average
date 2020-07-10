@@ -2,7 +2,7 @@
 set +x
 set -e
 . .colors.sh
-source /root/.bashrc
+sudo source /root/.bashrc
 BASEDIR=$PWD
 . $BASEDIR/io.sh 0 8 1 "$@"
 CURDIR=`pwd`
