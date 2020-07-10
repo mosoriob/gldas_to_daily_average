@@ -1,0 +1,36 @@
+#!/bin/bash
+set +x
+set -e
+. .colors.sh
+source /root/.bashrc
+BASEDIR=$PWD
+. $BASEDIR/io.sh 0 8 1 "$@"
+CURDIR=`pwd`
+## INPUTS VARIABLES
+
+
+## PARAMETERS VARIABLES
+gldas_dataset_id=${PARAMS1}
+shapefile_dataset_id=${PARAMS2}
+agg_function=${PARAMS3}
+agg_time_period=${PARAMS4}
+range_start_time=${PARAMS5}
+range_end_time=${PARAMS6}
+range_step_time=${PARAMS7}
+csv_output_file=${PARAMS8}
+
+
+set -xe
+
+####### WRITE YOUR INVOCATION LINE AFTER THIS COMMENT
+
+
+pushd .
+/ws/run --config examples/dame/templates/average_daily_all_variables.yml.template -i2 74e6f707-d5e9-4cbd-ae26-16ffa21a1d84 -i1 5babae3f-c468-4e01-862e-8b201468e3b5 -p1 average -p2 day -p3 2011-01-01 00:00:00 -p4 2011-01-02 00:00:00 -p5 P1D -o1 /tmp/mint/output.csv
+popd
+
+set +x
+echo -e "$(c G)[success] The model has exited with code SUCCESS"
+####### WRITE YOUR INVOCATION LINE BEFORE THIS COMMENT
+cd $BASEDIR
+. $BASEDIR/output.sh

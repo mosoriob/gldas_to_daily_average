@@ -1,0 +1,47 @@
+step: 1
+name: gldas_to_daily_average
+docker_image: gldas_to_daily_average:latest
+framework: !!python/object/apply:mic.constants.Framework
+- !!python/tuple
+  - general
+  - mintproject/generic:latest
+parameters:
+  gldas_dataset_id:
+    default_value: 5babae3f-c468-4e01-862e-8b201468e3b5
+    type: str
+    description: ''
+  shapefile_dataset_id:
+    default_value: 74e6f707-d5e9-4cbd-ae26-16ffa21a1d84
+    type: str
+    description: ''
+  agg_function:
+    default_value: average
+    type: str
+    description: ''
+  agg_time_period:
+    default_value: day
+    type: str
+    description: ''
+  range_start_time:
+    default_value: '2011-01-01 00:00:00'
+    type: str
+    description: ''
+  range_end_time:
+    default_value: '2011-01-02 00:00:00'
+    type: str
+    description: ''
+  range_step_time:
+    default_value: P1D
+    type: str
+    description: ''
+  csv_output_file:
+    default_value: /tmp/mint/output.zip
+    type: str
+    description: ''
+inputs: {}
+code_files: {}
+outputs:
+  output_csv:
+    path: output.csv
+    format: csv
+github_repo_url: https://github.com/sirspock/gldas_to_daily_average.git
