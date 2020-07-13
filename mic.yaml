@@ -1,6 +1,6 @@
 step: 1
 name: gldas_to_daily_average
-docker_image: mosorio/gldas_to_daily_average:20.7.7
+docker_image: mosorio/gldas_to_daily_average:20.7.8
 framework: !!python/object/apply:mic.constants.Framework
 - !!python/tuple
   - general
@@ -35,7 +35,7 @@ parameters:
     type: str
     description: ''
   csv_output_file:
-    default_value: /tmp/mint/output.zip
+    default_value: /tmp/mint/output.csv
     type: str
     description: ''
 inputs: {}
@@ -45,5 +45,5 @@ outputs:
     path: output.csv
     format: csv
 github_repo_url: https://github.com/sirspock/gldas_to_daily_average.git
-version: 20.7.7
+version: 20.7.8
 mint_component_url: https://raw.githubusercontent.com/sirspock/gldas_to_daily_average/master/mint_component.zip
