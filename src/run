@@ -26,7 +26,7 @@ set -xe
 
 
 pushd .
-/ws/run --config examples/dame/templates/average_daily_all_variables.yml.template -i2 $shapefile_dataset_id -i1 $gldas_dataset_id -p1 $agg_function -p2 $agg_time_period -p3 $range_start_time -p4 $range_end_time -p5 $range_step_time -o1 $csv_output_file
+/ws/run --config examples/dame/templates/average_daily_all_variables.yml.template -i2 "$shapefile_dataset_id" -i1 "$gldas_dataset_id" -p1 "$agg_function" -p2 "$agg_time_period" -p3 "$range_start_time" -p4 "$range_end_time" -p5 "$range_step_time" -o1 $csv_output_file
 popd
 
 set +x
