@@ -1,0 +1,7 @@
+step: 1
+name: gldas_to_daily_average
+docker_image: gldas_to_daily_average:latest
+framework: !!python/object/apply:mic.constants.Framework
+- !!python/tuple
+  - general
+  - mintproject/generic:latest
