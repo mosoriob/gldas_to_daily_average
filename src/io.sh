@@ -78,7 +78,7 @@ for ((i=1; i<=ONUM; i++)); do typeset OUTPUTS$i=$(echo ${OUTPUTS[$i]}); done
 IFS=' '
 
 
-
+umask 0000
 
 ## PARAMETERS VARIABLES
 gldas_dataset_id=${PARAMS1}
